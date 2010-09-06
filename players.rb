@@ -14,6 +14,7 @@ players = (doc/'player').map do |player|
 end
 
 if ARGV[0] == '-t'
+  players = players.select {|p| p.pos == ARGV[1]} if ARGV[1]
   players = players.reject {|p| p.tier.nil?}.sort_by { |p| format("%3s %2s %5s", p.pos, p.tier, p.adp) }
 end
 
