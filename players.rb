@@ -1,10 +1,12 @@
+#!/usr/bin/ruby
+
 ADP_URL = 'http://fantasyfootballcalculator.com/adp_xml.php?teams=12'
 
 require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
 require 'ostruct'
-require 'tiers'
+require './tiers'
 
 doc = Nokogiri::XML(open(ADP_URL))
 
