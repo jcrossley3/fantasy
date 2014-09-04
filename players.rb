@@ -17,7 +17,7 @@ end
 
 if ARGV[0] == '-t'
   players = players.select {|p| p.pos == ARGV[1]} if ARGV[1]
-  players = players.reject {|p| p.tier.nil?}.sort_by { |p| format("%3s %2s %5s", p.pos, p.tier, p.adp) }
+  players = players.reject {|p| p.tier.nil?}.sort_by { |p| format("%3s %2s %5s", p.pos, p.tier.to_f, p.adp) }
 end
 
 players.each do |p|
